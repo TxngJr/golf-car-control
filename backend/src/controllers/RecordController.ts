@@ -5,35 +5,49 @@ import formatDateThai from "../utils/formatDateThai";
 
 export async function recordStartEndTime(req: Request, res: Response) {
     try {
-        const { arduinoId } = req.params;
-        const { id } = req.body;
+        const { arduinoId, id }: { arduinoId?: string, id?: string } = req.query;
+
         if (!arduinoId) {
             throw new Error("Arduino ID is required");
         }
         if (!id) {
             const currentDate = new Date();
-            const record: IRecord = new RecordModel({
+            const record: IRecord | null = new RecordModel({
                 arduinoId,
                 startTime: formatDateThai(currentDate),
             });
             const savedRecord = await record.save();
             return res.status(201).json({ id: savedRecord._id });
         }
+        const existingRecord: IRecord | null = await RecordModel.findById(id);
+        if (!existingRecord) {
+            throw new Error("Record not found");
+        }
+
+        if (existingRecord.endTime) {
+            return res.status(400).json({ message: "Record already has an endTime" });
+        }
+
         const currentDate = new Date();
-        const updateRecord: IRecord | null = await RecordModel.findByIdAndUpdate(id, { endTime: formatDateThai(currentDate) });
+        const updateRecord: IRecord | null = await RecordModel.findByIdAndUpdate(
+            id,
+            { endTime: formatDateThai(currentDate) }
+        );
         if (updateRecord) {
-            return res.status(201).json({ id: updateRecord._id });
-        };
+            return res.status(201).json('Success this record');
+        }
     } catch (error) {
         return res.status(500).json({ error });
     }
 }
 
-export async function getRecords(req: Request, res: Response) {
+export async function getRecordById(req: Request, res: Response) {
     try {
-        const records = await RecordModel.find();
+        const { arduinoId }: { arduinoId?: string } = req.params;
+
+        const records = await RecordModel.find({ arduinoId });
         return res.status(200).json(records);
     } catch (error) {
-        return res.status(500).json({ error: 'Failed to get records' });
+        return res.status(500).json({ error });
     }
 }

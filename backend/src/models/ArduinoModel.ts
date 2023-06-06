@@ -2,6 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 import { IArduino } from '../interfaces/IArduino';
 
 const ArduinoSchema: Schema = new Schema({
+    name: { type: String, required: true },
     isBack: { type: Boolean, default: false },
     isFont: { type: Boolean, default: false },
     isRight: { type: Boolean, default: false },

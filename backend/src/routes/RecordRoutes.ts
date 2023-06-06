@@ -1,9 +1,10 @@
-import express from 'express';
-import { recordStartEndTime, getRecords, } from '../controllers/RecordController';
+import { Router } from 'express';
+import { recordStartEndTime, getRecordById } from '../controllers/RecordController';
 
-const router = express.Router();
+const router = Router();
 
-router.post('/:arduinoId',recordStartEndTime);
-router.get('/',recordStartEndTime);
+// record?arduinoId=34896724895827342356&id=347689347568923454356
+router.get('/create', recordStartEndTime);
+router.get('/getrecords/:arduinoId', getRecordById);
 
 export default router;

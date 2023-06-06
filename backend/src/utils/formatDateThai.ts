@@ -20,7 +20,7 @@ function formatDateThai(date: Date): string {
     const hours = date.getHours();
     const minutes = date.getMinutes();
   
-    return `${day}/${month}/${year} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    return `วันที่ ${day} ${month} ${year} เวลา ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
   }
   
   export default formatDateThai;

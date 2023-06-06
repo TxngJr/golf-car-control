@@ -1,28 +1,17 @@
-import * as Mongoose from "mongoose";
-let database: Mongoose.Connection;
-export const connect = () => {
-  // add your own uri below
-  const uri = "mongodb+srv://<username>:<password>@cluster0-v6q0g.mongodb.net/test?retryWrites=true&w=majority";
-  if (database) {
-    return;
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const { MONGODB_URL } = process.env;
+
+(async () => {
+  try {
+    mongoose.set("strictQuery", false);
+    await mongoose.connect(`${MONGODB_URL}`);
+    console.log("Successfully connected to database");
+  } catch (error) {
+    console.log("database connection failed. exiting now...");
+    console.error(error);
+    process.exit(1);
   }
-  Mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useFindAndModify: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  });
-  database = Mongoose.connection;
-  database.once("open", async () => {
-    console.log("Connected to database");
-  });
-  database.on("error", () => {
-    console.log("Error connecting to database");
-  });
-};
-export const disconnect = () => {
-  if (!database) {
-    return;
-  }
-  Mongoose.disconnect();
-};
+})();

@@ -1,12 +1,12 @@
-import express from 'express';
-import { createArduino, getArduino, getArduinoById, updateArduinoById, deleteArduinoById, } from '../controllers/ArduinoController';
+import { Router } from 'express';
+import { createArduino, getArduinos, getArduinoById, updateArduinoById, deleteArduinoById } from '../controllers/ArduinoController';
 
-const router = express.Router();
+const router = Router();
 
-router.get('/register', createArduino);
-router.get('/', getArduino);
-router.get('/:id', getArduinoById);
-router.put('/:id', updateArduinoById);
-router.delete('/:id', deleteArduinoById);
+router.get('/register/:name', createArduino);
+router.get('/getarduinos', getArduinos);
+router.get('/getarduino/:id', getArduinoById);
+router.put('/update/:id', updateArduinoById);
+router.delete('/delete/:id', deleteArduinoById);
 
 export default router;
