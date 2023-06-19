@@ -8,6 +8,7 @@ const CarSchema: Schema = new Schema({
     rightLight: { type: Boolean, default: false },
     isStart: { type: Boolean, default: false },
     battery: { type: Number, default: 0 },
+    location: { type: String, default: "" },
 });
 
 const CarModel = mongoose.model<ICar>('Car', CarSchema);

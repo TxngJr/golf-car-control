@@ -26,6 +26,7 @@ export async function getCarById(req: Request, res: Response) {
             rightLight: car.rightLight,
             isStart: car.isStart,
             battery: car.battery,
+            location: car.location,
         });
     } catch (error) {
         return res.status(500).json(error);
@@ -37,7 +38,7 @@ export async function updateCarById(req: Request, res: Response) {
         const { id }: { id?: string } = req.params;
         const update: Partial<ICar> = req.body;
 
-        const updatedCar = await ArduinoModel.findByIdAndUpdate(id, update,);
+        const updatedCar = await ArduinoModel.findByIdAndUpdate(id, update);
         if (!updatedCar) {
             return res.status(404).json('Car device not found');
         }

@@ -7,5 +7,5 @@ export interface ICar extends Document {
     rightLight?: boolean;
     isStart?: boolean;
     battery:string;
-    
+    location:string;
 }
