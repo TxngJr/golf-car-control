@@ -26,7 +26,8 @@ export async function getCarById(req: Request, res: Response) {
             rightLight: car.rightLight,
             isStart: car.isStart,
             battery: car.battery,
-            location: car.location,
+            latitude: car.latitude,
+            longitude: car.longitude,
         });
     } catch (error) {
         return res.status(500).json(error);

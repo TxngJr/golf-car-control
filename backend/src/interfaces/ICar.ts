@@ -6,6 +6,7 @@ export interface ICar extends Document {
     leftLight?: boolean;
     rightLight?: boolean;
     isStart?: boolean;
-    battery:string;
-    location:string;
+    battery?: string;
+    latitude?: Number;
+    longitude?: Number;
 }
