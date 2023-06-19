@@ -5,6 +5,6 @@ const router = Router();
 
 // record?arduinoId=34896724895827342356&id=347689347568923454356
 router.get('/create', recordStartEndTime);
-router.get('/getrecords/:arduinoId', getRecordById);
+router.get('/getrecords/:carId', getRecordById);
 
 export default router;

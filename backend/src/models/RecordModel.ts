@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 import { IRecord } from '../interfaces/IRecord';
 
 const RecordSchema: Schema = new Schema({
-    arduinoId: { type: Schema.Types.ObjectId, ref: 'Arduino', required: true },
+    carId: { type: Schema.Types.ObjectId, ref: 'Car', required: true },
     startTime: { type: String, required: true },
     endTime: { type: String },
 });

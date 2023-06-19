@@ -5,15 +5,15 @@ import formatDateThai from "../utils/formatDateThai";
 
 export async function recordStartEndTime(req: Request, res: Response) {
     try {
-        const { arduinoId, id }: { arduinoId?: string, id?: string } = req.query;
+        const { carId, id }: { carId?: string, id?: string } = req.query;
 
-        if (!arduinoId) {
-            throw new Error("Arduino ID is required");
+        if (!carId) {
+            throw new Error("Car ID is required");
         }
         if (!id) {
             const currentDate = new Date();
             const record: IRecord | null = new RecordModel({
-                arduinoId,
+                carId,
                 startTime: formatDateThai(currentDate),
             });
             const savedRecord = await record.save();
@@ -43,9 +43,12 @@ export async function recordStartEndTime(req: Request, res: Response) {
 
 export async function getRecordById(req: Request, res: Response) {
     try {
-        const { arduinoId }: { arduinoId?: string } = req.params;
+        const { carId }: { carId?: string } = req.params;
 
-        const records = await RecordModel.find({ arduinoId });
+        const records = await RecordModel.find({ carId });
+        if (!records) {
+            throw new Error("Record not found");
+        }
         return res.status(200).json(records);
     } catch (error) {
         return res.status(500).json({ error });

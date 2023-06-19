@@ -1,7 +1,7 @@
 import './config/database';
 import express, { Application } from 'express';
 import cors from 'cors';
-import arduinoRoutes from './routes/arduinoRoutes';
+import carRoutes from './routes/carRoutes';
 import recordRoutes from './routes/recordRoutes';
 
 
@@ -12,7 +12,7 @@ app.use(cors());
 
 const { PORT } = process.env;
 
-app.use('/arduino', arduinoRoutes);
+app.use('/car', carRoutes);
 app.use('/record', recordRoutes);
 
 app.listen(PORT, () => {
