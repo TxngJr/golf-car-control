@@ -8,17 +8,18 @@
 #define GPS_RX_PIN 16
 #define GPS_TX_PIN 17
 
-#define FRONT_LIGHT_PIN 13
-#define BACK_LIGHT_PIN 12
-#define IS_START_PIN 14
-#define LEFT_LIGHT_PIN 27
-#define RIGHT_LIGHT_PIN 26
-#define CHECK_BATTERY_PIN 25
+#define FRONT_LIGHT_PIN 4
+#define BACK_LIGHT_PIN 18
+#define IS_START_PIN 19
+#define LEFT_LIGHT_PIN 21
+#define RIGHT_LIGHT_PIN 22
+#define CHECK_BATTERY_PIN 23
 
 BatteryCheck battery(CHECK_BATTERY_PIN);
 TinyGPSPlus gps;
 
-String serverName = "http://192.168.1.45:5000/car/";
+String serverName = "http://swapsjobs.3bbddns.com:36889/car/";
+String tokenId = "648fe088444fd58e8d3cac8b";
 unsigned long previousMillis = 0;
 
 void setup() {
@@ -45,7 +46,7 @@ void loop() {
   if ((millis() - previousMillis) >= 500) {
     HTTPClient http;
 
-    String serverPath = serverName + "getcar/648fe088444fd58e8d3cac8b";
+    String serverPath = serverName + "getcar/" + tokenId;
 
     http.begin(serverPath.c_str());
 
@@ -91,7 +92,7 @@ void loop() {
           String jsonString;
           serializeJson(jsonDoc, jsonString);
 
-          serverPath = serverName + "update/648fe088444fd58e8d3cac8b";
+          serverPath = serverName + "update/" + tokenId;
           http.begin(serverPath.c_str());
           http.addHeader("Content-Type", "application/json");
 
