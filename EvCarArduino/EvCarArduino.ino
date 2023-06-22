@@ -21,6 +21,44 @@ TinyGPSPlus gps;
 String serverName = "http://swapsjobs.3bbddns.com:36889/car/";
 String tokenId = "648fe088444fd58e8d3cac8b";
 unsigned long previousMillis = 0;
+const int taskDelay = 1000;
+
+TaskHandle_t taskHandle = NULL;
+
+void taskPutBatteryAndMap(void *pvParameters) {
+  while (1) {
+    while (Serial1.available() > 0) {
+      if (gps.encode(Serial1.read())) {
+        if (gps.location.isUpdated()) {
+          const size_t capacity = JSON_OBJECT_SIZE(3);
+          DynamicJsonDocument jsonDoc(capacity);
+          jsonDoc["battery"] = battery.batteryPercent();
+          jsonDoc["latitude"] = gps.location.lat();
+          jsonDoc["longitude"] = gps.location.lng();
+
+          String jsonString;
+          serializeJson(jsonDoc, jsonString);
+
+          HTTPClient http;
+
+          String serverPath = serverName + "updatebatteryandmapcar/" + tokenId;
+          http.begin(serverPath.c_str());
+          http.addHeader("Content-Type", "application/json");
+
+          int httpResponseCode = http.PUT(jsonString);
+
+          if (httpResponseCode == HTTP_CODE_OK) {
+            Serial.println("Data sent successfully");
+          } else {
+            Serial.print("Error occurred while sending data: ");
+          }
+          http.end();
+        }
+      }
+    }
+    vTaskDelay(taskDelay / 2);
+  }
+}
 
 void setup() {
   Serial.begin(115200);
@@ -28,7 +66,7 @@ void setup() {
   WiFi.mode(WIFI_STA);
   WiFiManager wm;
   bool res;
-  res = wm.autoConnect("EvCarConnect", "");
+  res = wm.autoConnect("EvCarConnect", " ");
   if (!res) {
     Serial.println("Failed to connect");
     ESP.restart();
@@ -40,6 +78,14 @@ void setup() {
   pinMode(LEFT_LIGHT_PIN, OUTPUT);
   pinMode(RIGHT_LIGHT_PIN, OUTPUT);
   pinMode(IS_START_PIN, OUTPUT);
+
+  xTaskCreate(
+    taskPutBatteryAndMap,
+    "PutBatteryAndMapTask",
+    2000,
+    NULL,
+    1,
+    &taskHandle);
 }
 
 void loop() {
@@ -79,38 +125,6 @@ void loop() {
       Serial.println(httpResponseCode);
     }
     http.end();
-
-    while (Serial1.available() > 0) {
-      if (gps.encode(Serial1.read())) {
-        if (gps.location.isUpdated()) {
-          const size_t capacity = JSON_OBJECT_SIZE(3);
-          DynamicJsonDocument jsonDoc(capacity);
-          jsonDoc["battery"] = battery.batteryPercent();
-          jsonDoc["latitude"] = gps.location.lat();
-          jsonDoc["longitude"] = gps.location.lng();
-
-          String jsonString;
-          serializeJson(jsonDoc, jsonString);
-
-          serverPath = serverName + "update/" + tokenId;
-          http.begin(serverPath.c_str());
-          http.addHeader("Content-Type", "application/json");
-
-          int httpResponseCode = http.PUT(jsonString);
-
-          if (httpResponseCode == HTTP_CODE_OK) {
-            String response = http.getString();
-            Serial.println("Data sent successfully");
-            Serial.print("Response: ");
-            Serial.println(response);
-          } else {
-            Serial.print("Error occurred while sending data: ");
-            Serial.println(httpResponseCode);
-          }
-          http.end();
-        }
-      }
-    }
     previousMillis = millis();
   }
 }
