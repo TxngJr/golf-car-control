@@ -11,6 +11,7 @@ import RecordingScreen from './screens/RecordingScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomNavigator from './components/BottomNavigator';
+import SpeechRecognition from './components/SpeechRecognition';
 
 const Stack = createStackNavigator();
 

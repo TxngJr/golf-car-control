@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import { getCar, putCar } from '../apis/api';
 import { ICar } from '../interfaces/ICar';
+import CheckBoxSvg from '../assets/svgs/CheckBoxSvg';
 
 type Props = {}
 
@@ -58,7 +59,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('frontLight')}
                         >
-                            <Text>{carData?.frontLight ? 'ON' : 'OFF'}</Text>
+                            <CheckBoxSvg activeTabButtonText={carData?.frontLight ? true : false}/>
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
@@ -67,7 +68,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('backLight')}
                         >
-                            <Text>{carData?.backLight ? 'ON' : 'OFF'}</Text>
+                            <CheckBoxSvg activeTabButtonText={carData?.backLight ? true : false}/>
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
@@ -76,7 +77,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('leftLight')}
                         >
-                            <Text>{carData?.leftLight ? 'ON' : 'OFF'}</Text>
+                            <CheckBoxSvg activeTabButtonText={carData?.leftLight ? true : false}/>
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
@@ -85,7 +86,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('rightLight')}
                         >
-                            <Text>{carData?.rightLight ? 'ON' : 'OFF'}</Text>
+                            <CheckBoxSvg activeTabButtonText={carData?.rightLight ? true : false}/>
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
@@ -98,7 +99,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('isStart')}
                         >
-                            <Text>{carData?.isStart ? 'ON' : 'OFF'}</Text>
+                            <CheckBoxSvg activeTabButtonText={carData?.isStart ? true : false}/>
                         </TouchableOpacity>
                     </View>
                 </View>

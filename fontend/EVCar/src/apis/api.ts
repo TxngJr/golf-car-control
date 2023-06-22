@@ -14,6 +14,15 @@ export const getCar = async () => {
     }
 };
 
+export const getBatteryAndMapCar = async () => {
+    try {
+        const response = await axios.get(`${API_URL}car/getbatteryandmapcar/${CAR_ID}`);
+        return response.data;
+    } catch (error) {
+        return error;
+    }
+};
+
 export const putCar = async (updatedData: ICar) => {
     try {
         const response = await axios.put(`${API_URL}car/update/${CAR_ID}`, updatedData);
@@ -22,6 +31,7 @@ export const putCar = async (updatedData: ICar) => {
         return error;
     }
 };
+
 
 export const createRecord = async () => {
     try {
