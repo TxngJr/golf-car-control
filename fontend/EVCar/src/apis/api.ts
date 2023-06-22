@@ -36,7 +36,7 @@ export const putCar = async (updatedData: ICar) => {
 export const createRecord = async () => {
     try {
         const recordId = await AsyncStorage.getItem("recordId");
-        if (recordId !== null) {
+        if (recordId === null) {
             const response = await axios.get(`${API_URL}record/create?carId=${CAR_ID}`);
             await AsyncStorage.setItem("recordId", response.data.id);
             return response.data;
@@ -51,7 +51,7 @@ export const createRecord = async () => {
 
 export const getRecords = async () => {
     try {
-        const response = await axios.get(`${API_URL}record/getrecords/648fe088444fd58e8d3cac8b`);
+        const response = await axios.get(`${API_URL}record/getrecords/${CAR_ID}`);
         return response.data;
     } catch (error) {
         return error;

@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* EVCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EVCarTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-EVCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-EVCar.a */; };
+		00E356F31AD99517003FC87E /* EVcarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EVcarTests.m */; };
+		0C80B921A6F3F58F76C31292 /* libPods-EVcar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-EVcar.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-EVCar-EVCarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-EVCar-EVCarTests.a */; };
+		7699B88040F8A987B510C191 /* libPods-EVcar-EVcarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-EVcar-EVcarTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		783D58C4CB444307836E50DE /* THSarabun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BC474BEB719406D8B32C4A5 /* THSarabun.ttf */; };
-		CBC8AABAC52348D481EDA095 /* THSarabunBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E5D4458CBFB4C5A982CDAFA /* THSarabunBold.ttf */; };
-		67BCA2D201ED4DE69B6DBFE9 /* THSarabunBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B05640C62024830B2D07E99 /* THSarabunBoldItalic.ttf */; };
-		047AFC28EE0B42D6939E7677 /* THSarabunItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30BB6B8980FC492791C18418 /* THSarabunItalic.ttf */; };
+		D460256B263A4780A154FDE1 /* THSarabun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67F19F342A4446A4A6E5465A /* THSarabun.ttf */; };
+		ADB42780087A4AA5A9F0F71A /* THSarabunBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F96AC0D622B24E61B146755D /* THSarabunBold.ttf */; };
+		E993D91019DF49F9828B21F1 /* THSarabunBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B22894D25A74843962E7EB4 /* THSarabunBoldItalic.ttf */; };
+		54AC24BD3BB1455D805DA417 /* THSarabunItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C81B35CA444E99A1B6819E /* THSarabunItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,32 +26,32 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = EVCar;
+			remoteInfo = EVcar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* EVCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* EVcarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVcarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* EVCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVCarTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* EVCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EVCar/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = EVCar/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = EVCar/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = EVCar/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EVCar/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-EVCar-EVCarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EVCar-EVCarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-EVCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVCar.debug.xcconfig"; path = "Target Support Files/Pods-EVCar/Pods-EVCar.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-EVCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVCar.release.xcconfig"; path = "Target Support Files/Pods-EVCar/Pods-EVCar.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-EVCar-EVCarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVCar-EVCarTests.debug.xcconfig"; path = "Target Support Files/Pods-EVCar-EVCarTests/Pods-EVCar-EVCarTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-EVCar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EVCar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EVCar/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-EVCar-EVCarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVCar-EVCarTests.release.xcconfig"; path = "Target Support Files/Pods-EVCar-EVCarTests/Pods-EVCar-EVCarTests.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* EVcarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EVcarTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* EVcar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVcar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EVcar/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = EVcar/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = EVcar/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = EVcar/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EVcar/main.m; sourceTree = "<group>"; };
+		19F6CBCC0A4E27FBF8BF4A61 /* libPods-EVcar-EVcarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EVcar-EVcarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4392A12AC88292D35C810B /* Pods-EVcar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVcar.debug.xcconfig"; path = "Target Support Files/Pods-EVcar/Pods-EVcar.debug.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-EVcar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVcar.release.xcconfig"; path = "Target Support Files/Pods-EVcar/Pods-EVcar.release.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-EVcar-EVcarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVcar-EVcarTests.debug.xcconfig"; path = "Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-EVcar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EVcar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EVcar/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-EVcar-EVcarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVcar-EVcarTests.release.xcconfig"; path = "Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		4BC474BEB719406D8B32C4A5 /* THSarabun.ttf */ = {isa = PBXFileReference; name = "THSarabun.ttf"; path = "../src/assets/fonts/THSarabun.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6E5D4458CBFB4C5A982CDAFA /* THSarabunBold.ttf */ = {isa = PBXFileReference; name = "THSarabunBold.ttf"; path = "../src/assets/fonts/THSarabunBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2B05640C62024830B2D07E99 /* THSarabunBoldItalic.ttf */ = {isa = PBXFileReference; name = "THSarabunBoldItalic.ttf"; path = "../src/assets/fonts/THSarabunBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		30BB6B8980FC492791C18418 /* THSarabunItalic.ttf */ = {isa = PBXFileReference; name = "THSarabunItalic.ttf"; path = "../src/assets/fonts/THSarabunItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67F19F342A4446A4A6E5465A /* THSarabun.ttf */ = {isa = PBXFileReference; name = "THSarabun.ttf"; path = "../src/assets/fonts/THSarabun.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F96AC0D622B24E61B146755D /* THSarabunBold.ttf */ = {isa = PBXFileReference; name = "THSarabunBold.ttf"; path = "../src/assets/fonts/THSarabunBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1B22894D25A74843962E7EB4 /* THSarabunBoldItalic.ttf */ = {isa = PBXFileReference; name = "THSarabunBoldItalic.ttf"; path = "../src/assets/fonts/THSarabunBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		15C81B35CA444E99A1B6819E /* THSarabunItalic.ttf */ = {isa = PBXFileReference; name = "THSarabunItalic.ttf"; path = "../src/assets/fonts/THSarabunItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-EVCar-EVCarTests.a in Frameworks */,
+				7699B88040F8A987B510C191 /* libPods-EVcar-EVcarTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,20 +67,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-EVCar.a in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-EVcar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* EVCarTests */ = {
+		00E356EF1AD99517003FC87E /* EVcarTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* EVCarTests.m */,
+				00E356F21AD99517003FC87E /* EVcarTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = EVCarTests;
+			path = EVcarTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -91,7 +91,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* EVCar */ = {
+		13B07FAE1A68108700A75B9A /* EVcar */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -101,15 +101,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = EVCar;
+			name = EVcar;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-EVCar.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-EVCar-EVCarTests.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-EVcar.a */,
+				19F6CBCC0A4E27FBF8BF4A61 /* libPods-EVcar-EVcarTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,13 +124,13 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* EVCar */,
+				13B07FAE1A68108700A75B9A /* EVcar */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* EVCarTests */,
+				00E356EF1AD99517003FC87E /* EVcarTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				A736973AEF114A6FA2420543 /* Resources */,
+				AE0D9B429E0442FABED23614 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -140,8 +140,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* EVCar.app */,
-				00E356EE1AD99517003FC87E /* EVCarTests.xctest */,
+				13B07F961A680F5B00A75B9A /* EVcar.app */,
+				00E356EE1AD99517003FC87E /* EVcarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,21 +149,21 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-EVCar.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-EVCar.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-EVCar-EVCarTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-EVCar-EVCarTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-EVcar.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-EVcar.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-EVcar-EVcarTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-EVcar-EVcarTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A736973AEF114A6FA2420543 /* Resources */ = {
+		AE0D9B429E0442FABED23614 /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
-				4BC474BEB719406D8B32C4A5 /* THSarabun.ttf */,
-				6E5D4458CBFB4C5A982CDAFA /* THSarabunBold.ttf */,
-				2B05640C62024830B2D07E99 /* THSarabunBoldItalic.ttf */,
-				30BB6B8980FC492791C18418 /* THSarabunItalic.ttf */,
+				67F19F342A4446A4A6E5465A /* THSarabun.ttf */,
+				F96AC0D622B24E61B146755D /* THSarabunBold.ttf */,
+				1B22894D25A74843962E7EB4 /* THSarabunBoldItalic.ttf */,
+				15C81B35CA444E99A1B6819E /* THSarabunItalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -172,9 +172,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* EVCarTests */ = {
+		00E356ED1AD99517003FC87E /* EVcarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EVCarTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EVcarTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -188,14 +188,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = EVCarTests;
-			productName = EVCarTests;
-			productReference = 00E356EE1AD99517003FC87E /* EVCarTests.xctest */;
+			name = EVcarTests;
+			productName = EVcarTests;
+			productReference = 00E356EE1AD99517003FC87E /* EVcarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* EVCar */ = {
+		13B07F861A680F5B00A75B9A /* EVcar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "EVCar" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "EVcar" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -210,9 +210,9 @@
 			);
 			dependencies = (
 			);
-			name = EVCar;
-			productName = EVCar;
-			productReference = 13B07F961A680F5B00A75B9A /* EVCar.app */;
+			name = EVcar;
+			productName = EVcar;
+			productReference = 13B07F961A680F5B00A75B9A /* EVcar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -232,7 +232,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "EVCar" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "EVcar" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -245,8 +245,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* EVCar */,
-				00E356ED1AD99517003FC87E /* EVCarTests */,
+				13B07F861A680F5B00A75B9A /* EVcar */,
+				00E356ED1AD99517003FC87E /* EVcarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,10 +265,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				783D58C4CB444307836E50DE /* THSarabun.ttf in Resources */,
-				CBC8AABAC52348D481EDA095 /* THSarabunBold.ttf in Resources */,
-				67BCA2D201ED4DE69B6DBFE9 /* THSarabunBoldItalic.ttf in Resources */,
-				047AFC28EE0B42D6939E7677 /* THSarabunItalic.ttf in Resources */,
+				D460256B263A4780A154FDE1 /* THSarabun.ttf in Resources */,
+				ADB42780087A4AA5A9F0F71A /* THSarabunBold.ttf in Resources */,
+				E993D91019DF49F9828B21F1 /* THSarabunBoldItalic.ttf in Resources */,
+				54AC24BD3BB1455D805DA417 /* THSarabunItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,15 +297,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EVCar/Pods-EVCar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EVcar/Pods-EVcar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EVCar/Pods-EVCar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EVcar/Pods-EVcar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EVCar/Pods-EVCar-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EVcar/Pods-EVcar-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
@@ -323,7 +323,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EVCar-EVCarTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EVcar-EVcarTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -345,7 +345,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EVCar-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EVcar-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -358,15 +358,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EVCar-EVCarTests/Pods-EVCar-EVCarTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EVCar-EVCarTests/Pods-EVCar-EVCarTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EVCar-EVCarTests/Pods-EVCar-EVCarTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -375,15 +375,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EVCar/Pods-EVCar-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EVcar/Pods-EVcar-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EVCar/Pods-EVCar-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EVcar/Pods-EVcar-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EVCar/Pods-EVCar-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EVcar/Pods-EVcar-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -392,15 +392,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EVCar-EVCarTests/Pods-EVCar-EVCarTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EVCar-EVCarTests/Pods-EVCar-EVCarTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EVCar-EVCarTests/Pods-EVCar-EVCarTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -429,7 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* EVCarTests.m in Sources */,
+				00E356F31AD99517003FC87E /* EVcarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +447,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* EVCar */;
+			target = 13B07F861A680F5B00A75B9A /* EVcar */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -455,14 +455,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-EVCar-EVCarTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-EVcar-EVcarTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = EVCarTests/Info.plist;
+				INFOPLIST_FILE = EVcarTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -476,17 +476,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVCar.app/EVCar";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVcar.app/EVcar";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-EVCar-EVCarTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-EVcar-EVcarTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = EVCarTests/Info.plist;
+				INFOPLIST_FILE = EVcarTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,19 +500,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVCar.app/EVCar";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EVcar.app/EVcar";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-EVCar.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-EVcar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = EVCar/Info.plist;
+				INFOPLIST_FILE = EVcar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,7 +524,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = EVCar;
+				PRODUCT_NAME = EVcar;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -533,12 +533,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-EVCar.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-EVcar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = EVCar/Info.plist;
+				INFOPLIST_FILE = EVcar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,7 +550,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = EVCar;
+				PRODUCT_NAME = EVcar;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -694,7 +694,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EVCarTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EVcarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -703,7 +703,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "EVCar" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "EVcar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -712,7 +712,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "EVCar" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "EVcar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

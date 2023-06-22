@@ -1,20 +1,23 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient';
-import { getCar, putCar } from '../apis/api';
+import { createRecord, getCar, putCar } from '../apis/api';
 import { ICar } from '../interfaces/ICar';
 import CheckBoxSvg from '../assets/svgs/CheckBoxSvg';
 
-type Props = {}
+type Props = {
+    setIsUpdateCarDataProps: (value: boolean) => void;
+}
 
-const HomeScreen = (props: Props) => {
+const HomeScreen = ({ setIsUpdateCarDataProps }: Props) => {
     const [carData, setCarData] = useState<ICar | null>(null);
     const [isUpdateCarData, setIsUpdateCarData] = useState<boolean>(true);
 
     useEffect(() => {
         fetchCarData();
         setIsUpdateCarData(false);
-    }, [isUpdateCarData]);
+        setIsUpdateCarDataProps(false);
+    }, [isUpdateCarData, setIsUpdateCarDataProps]);
 
     const fetchCarData = async () => {
         try {
@@ -59,7 +62,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('frontLight')}
                         >
-                            <CheckBoxSvg activeTabButtonText={carData?.frontLight ? true : false}/>
+                            <CheckBoxSvg activeTabButtonText={carData?.frontLight ? true : false} />
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
@@ -68,7 +71,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('backLight')}
                         >
-                            <CheckBoxSvg activeTabButtonText={carData?.backLight ? true : false}/>
+                            <CheckBoxSvg activeTabButtonText={carData?.backLight ? true : false} />
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
@@ -77,7 +80,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('leftLight')}
                         >
-                            <CheckBoxSvg activeTabButtonText={carData?.leftLight ? true : false}/>
+                            <CheckBoxSvg activeTabButtonText={carData?.leftLight ? true : false} />
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
@@ -86,7 +89,7 @@ const HomeScreen = (props: Props) => {
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
                             onPress={() => handleStatusClick('rightLight')}
                         >
-                            <CheckBoxSvg activeTabButtonText={carData?.rightLight ? true : false}/>
+                            <CheckBoxSvg activeTabButtonText={carData?.rightLight ? true : false} />
                         </TouchableOpacity>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
@@ -97,9 +100,9 @@ const HomeScreen = (props: Props) => {
                         <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}>สตาร์ทรถ</Text>
                         <TouchableOpacity
                             style={{ flexDirection: 'row', justifyContent: 'space-around' }}
-                            onPress={() => handleStatusClick('isStart')}
+                            onPress={async () => { handleStatusClick('isStart'); await createRecord(); }}
                         >
-                            <CheckBoxSvg activeTabButtonText={carData?.isStart ? true : false}/>
+                            <CheckBoxSvg activeTabButtonText={carData?.isStart ? true : false} />
                         </TouchableOpacity>
                     </View>
                 </View>
