@@ -20,6 +20,7 @@ type Props = {}
 const App = (props: Props) => {
     const [isListening, setIsListening] = useState<boolean>(false);
     const [activeTab, setActiveTab] = useState('home');
+    const [isUpdateCarDataProps, setIsUpdateCarDataProps] = useState<boolean>(true);
 
     const navigateToScreen = (screen: any) => {
         setActiveTab(screen);
@@ -88,17 +89,12 @@ const App = (props: Props) => {
             handleStatusClick('isStart', false);
             await createRecord();
         }
-        console.log(words);
-    };
-
-    const setIsUpdateCarDataProps = (value: boolean) => {
-        console.log(`isUpdateCarDataProps updated to: ${value}`);
     };
 
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
-                {activeTab === 'home' && <HomeScreen setIsUpdateCarDataProps={setIsUpdateCarDataProps} />}
+                {activeTab === 'home' && <HomeScreen isUpdateCarDataProps={isUpdateCarDataProps}setIsUpdateCarDataProps={setIsUpdateCarDataProps} />}
                 {activeTab === 'recordig' && <RecordingScreen />}
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 5 }}>
