@@ -45,7 +45,7 @@ export async function getRecordById(req: Request, res: Response) {
     try {
         const { carId }: { carId?: string } = req.params;
 
-        const records = await RecordModel.find({ carId });
+        const records = (await RecordModel.find({ carId })).reverse();
         if (!records) {
             throw new Error("Record not found");
         }

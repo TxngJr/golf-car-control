@@ -26,6 +26,11 @@ export const getBatteryAndMapCar = async () => {
 export const putCar = async (updatedData: ICar) => {
     try {
         const response = await axios.put(`${API_URL}car/update/${CAR_ID}`, updatedData);
+        if (updatedData.isStart === true) {
+            createRecord();
+        } else if (updatedData.isStart === false) {
+            createRecord();
+        }
         return response.data;
     } catch (error) {
         return error;

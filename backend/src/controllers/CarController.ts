@@ -52,7 +52,6 @@ export async function updateCarById(req: Request, res: Response) {
     try {
         const { id }: { id?: string } = req.params;
         const update: Partial<ICar> = req.body;
-
         const updatedCar = await ArduinoModel.findByIdAndUpdate(id, update);
         if (!updatedCar) {
             return res.status(404).json('Car device not found');

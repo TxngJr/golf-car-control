@@ -35,12 +35,22 @@ const RecordingScreen = (props: Props) => {
         />
       </View>
       <View style={{ width: 350, height: 600, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30 }}>
-        <Text style={{ alignSelf: 'center', fontFamily: "THSarabunBold", fontSize: 36, color: "#000000",paddingTop:20 }}>History</Text>
+        <Text style={{ alignSelf: 'center', fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingTop: 20 }}>ประวัติการใช้งานรถ</Text>
         <ScrollView>
           {data.map((item: IRecord) => (
-            <View key={item._id} style={{ width: 300, height: 150, backgroundColor: '#EDF5FA', marginVertical: 10, alignSelf: 'center', borderRadius:30,borderColor:'#90D6FA' ,borderWidth:1,alignItems:'center',justifyContent:'center'}}>
-              <View style={{flexDirection:'row'}}><Text style={{ fontFamily: "THSarabunBold", fontSize: 30, color: "#000000" }}>เปิดรถ</Text><Text style={{ fontFamily: "THSarabunBold", fontSize: 23, color: "#000000" }}>{item.startTime}</Text></View>
-              <View style={{flexDirection:'row'}}><Text style={{ fontFamily: "THSarabunBold", fontSize: 30, color: "#000000" }}>ปิดรถ</Text><Text style={{ fontFamily: "THSarabunBold", fontSize: 23, color: "#000000" }}>{item.endTime}</Text></View>
+            <View key={item._id} style={{ width: 300, height: 150, backgroundColor: '#EDF5FA', marginVertical: 10, alignSelf: 'center', borderRadius: 30, borderColor: '#90D6FA', borderWidth: 1, alignItems: 'center', justifyContent: 'center' }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Text style={{ fontFamily: "THSarabunBold", fontSize: 30, color: "#000000", marginLeft: 10, marginRight: 40 }}>เปิดรถ</Text>
+                <View style={{ width: 180, alignItems: 'center' }}>
+                  <Text style={{ fontFamily: "THSarabunBold", fontSize: 23, color: "#000000", textAlign: 'center' }}>{item.startTime}</Text>
+                </View>
+              </View>
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Text style={{ fontFamily: "THSarabunBold", fontSize: 30, color: "#000000", marginLeft: 10, marginRight: 40 }}>ปิดรถ</Text>
+                <View style={{ width: 180, alignItems: 'center' }}>
+                  <Text style={{ fontFamily: "THSarabunBold", fontSize: 23, color: "#000000", textAlign: 'center' }}>{item.endTime ? item.endTime : 'ยังไม่ดับรถ'}</Text>
+                </View>
+              </View>
             </View>
           ))}
         </ScrollView>

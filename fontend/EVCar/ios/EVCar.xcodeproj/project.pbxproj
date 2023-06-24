@@ -14,10 +14,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-EVcar-EVcarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-EVcar-EVcarTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D460256B263A4780A154FDE1 /* THSarabun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67F19F342A4446A4A6E5465A /* THSarabun.ttf */; };
-		ADB42780087A4AA5A9F0F71A /* THSarabunBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F96AC0D622B24E61B146755D /* THSarabunBold.ttf */; };
-		E993D91019DF49F9828B21F1 /* THSarabunBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B22894D25A74843962E7EB4 /* THSarabunBoldItalic.ttf */; };
-		54AC24BD3BB1455D805DA417 /* THSarabunItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15C81B35CA444E99A1B6819E /* THSarabunItalic.ttf */; };
+		58043FFA5C2C4E28B94C1E98 /* THSarabun.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B143773CE6064F32A15CA67E /* THSarabun.ttf */; };
+		2AE1DF3258EF47E3AA125F88 /* THSarabunBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45B01989CE8141F5A7A452A7 /* THSarabunBold.ttf */; };
+		4A01EE628B7B437888F1C838 /* THSarabunBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30DFE2DF939047F49E76AF21 /* THSarabunBoldItalic.ttf */; };
+		933D62A0704F4C979388839E /* THSarabunItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C935B1EBF454032AECD655C /* THSarabunItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +48,10 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EVcar/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-EVcar-EVcarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVcar-EVcarTests.release.xcconfig"; path = "Target Support Files/Pods-EVcar-EVcarTests/Pods-EVcar-EVcarTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		67F19F342A4446A4A6E5465A /* THSarabun.ttf */ = {isa = PBXFileReference; name = "THSarabun.ttf"; path = "../src/assets/fonts/THSarabun.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F96AC0D622B24E61B146755D /* THSarabunBold.ttf */ = {isa = PBXFileReference; name = "THSarabunBold.ttf"; path = "../src/assets/fonts/THSarabunBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1B22894D25A74843962E7EB4 /* THSarabunBoldItalic.ttf */ = {isa = PBXFileReference; name = "THSarabunBoldItalic.ttf"; path = "../src/assets/fonts/THSarabunBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		15C81B35CA444E99A1B6819E /* THSarabunItalic.ttf */ = {isa = PBXFileReference; name = "THSarabunItalic.ttf"; path = "../src/assets/fonts/THSarabunItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B143773CE6064F32A15CA67E /* THSarabun.ttf */ = {isa = PBXFileReference; name = "THSarabun.ttf"; path = "../src/assets/fonts/THSarabun.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		45B01989CE8141F5A7A452A7 /* THSarabunBold.ttf */ = {isa = PBXFileReference; name = "THSarabunBold.ttf"; path = "../src/assets/fonts/THSarabunBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		30DFE2DF939047F49E76AF21 /* THSarabunBoldItalic.ttf */ = {isa = PBXFileReference; name = "THSarabunBoldItalic.ttf"; path = "../src/assets/fonts/THSarabunBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2C935B1EBF454032AECD655C /* THSarabunItalic.ttf */ = {isa = PBXFileReference; name = "THSarabunItalic.ttf"; path = "../src/assets/fonts/THSarabunItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				AE0D9B429E0442FABED23614 /* Resources */,
+				A8C17069357F439AA4ADCC0A /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -157,13 +157,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AE0D9B429E0442FABED23614 /* Resources */ = {
+		A8C17069357F439AA4ADCC0A /* Resources */ = {
 			isa = "PBXGroup";
 			children = (
-				67F19F342A4446A4A6E5465A /* THSarabun.ttf */,
-				F96AC0D622B24E61B146755D /* THSarabunBold.ttf */,
-				1B22894D25A74843962E7EB4 /* THSarabunBoldItalic.ttf */,
-				15C81B35CA444E99A1B6819E /* THSarabunItalic.ttf */,
+				B143773CE6064F32A15CA67E /* THSarabun.ttf */,
+				45B01989CE8141F5A7A452A7 /* THSarabunBold.ttf */,
+				30DFE2DF939047F49E76AF21 /* THSarabunBoldItalic.ttf */,
+				2C935B1EBF454032AECD655C /* THSarabunItalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -265,10 +265,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				D460256B263A4780A154FDE1 /* THSarabun.ttf in Resources */,
-				ADB42780087A4AA5A9F0F71A /* THSarabunBold.ttf in Resources */,
-				E993D91019DF49F9828B21F1 /* THSarabunBoldItalic.ttf in Resources */,
-				54AC24BD3BB1455D805DA417 /* THSarabunItalic.ttf in Resources */,
+				58043FFA5C2C4E28B94C1E98 /* THSarabun.ttf in Resources */,
+				2AE1DF3258EF47E3AA125F88 /* THSarabunBold.ttf in Resources */,
+				4A01EE628B7B437888F1C838 /* THSarabunBoldItalic.ttf in Resources */,
+				933D62A0704F4C979388839E /* THSarabunItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
