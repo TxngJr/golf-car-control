@@ -1,20 +1,54 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
+import ArrowUp from '../assets/svgs/ArrowUp';
+import ArrowDown from '../assets/svgs/ArrowDown';
+import ArrowLeft from '../assets/svgs/ArrowLeft';
+import ArrowRight from '../assets/svgs/ArrowRight';
+import PowerSvg from '../assets/svgs/PowerSvg';
 
 type Props = {
   isEnabled: boolean;
   onToggle: (isEnabled: boolean) => void;
+  icon: string;
 }
 
-const ToggleSwitch = ({ isEnabled, onToggle }:Props) => {
+const ToggleSwitch = ({ isEnabled, onToggle, icon }: Props) => {
   const toggleSwitch = () => {
     onToggle(!isEnabled);
   };
 
+  let renderedIcon = null;
+
+  switch (icon) {
+    case 'ArrowUp':
+      renderedIcon = <ArrowUp />;
+      break;
+    case 'ArrowDown':
+      renderedIcon = <ArrowDown />;
+      break;
+    case 'ArrowLeft':
+      renderedIcon = <ArrowLeft />;
+      break;
+    case 'ArrowRight':
+      renderedIcon = <ArrowRight />;
+      break;
+    case 'PowerSvg':
+      renderedIcon = <PowerSvg />;
+      break;
+    default:
+      break;
+  }
+
   return (
-    <TouchableOpacity onPress={toggleSwitch} activeOpacity={0.8} style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-      <View style={[styles.container, isEnabled ? styles.containerActive:{backgroundColor:'#ff4d4d'}]}>
-        <View style={[styles.toggle, isEnabled ? styles.toggleActive:{backgroundColor: '#fff',transform: [{ translateX: -1 }],}]} />
+    <TouchableOpacity onPress={toggleSwitch} activeOpacity={0.8} >
+      <View style={[{ 
+        borderColor: '#00000', borderWidth: 4 }, 
+        isEnabled ? { backgroundColor: '#FFFF00' } : { backgroundColor: '#FF2E2E' }, 
+        icon == "ArrowUp" && isEnabled && { backgroundColor: '#C4E4F4' }, 
+        icon == "PowerSvg" ? { borderRadius: 100 } : { borderRadius: 50 },
+        icon == "PowerSvg" && isEnabled && { backgroundColor: '#00D100' },
+        ]}>
+        {renderedIcon}
       </View>
     </TouchableOpacity>
   );
@@ -33,7 +67,7 @@ const styles = StyleSheet.create({
     padding: 2,
   },
   containerActive: {
-    backgroundColor: '#90EE90',
+    backgroundColor: '#00A300',
   },
   toggle: {
     width: 25,

@@ -9,7 +9,8 @@ import Voice from '@react-native-voice/voice';
 import { ICar } from './interfaces/ICar';
 import { getBatteryAndMapCar, putCar } from './apis/api';
 import { IBatteryAdMapCar } from './interfaces/IBatteryAdMapCar';
-import {enableLatestRenderer} from 'react-native-maps';
+import { enableLatestRenderer } from 'react-native-maps';
+import HomeScreenV2 from './screens/HomeScreenV2';
 
 enableLatestRenderer();
 type Props = {}
@@ -48,7 +49,7 @@ const App = (props: Props) => {
                 } else if (batteryAndMapCar?.battery <= 0 && checkBattery0) {
                     Alert.alert('แบตเตอรี่ของคุณหมดแล้ว');
                     setCheckBattery0(false);
-                }else if (batteryAndMapCar?.battery > 10 && !checkBattery10) {
+                } else if (batteryAndMapCar?.battery > 10 && !checkBattery10) {
                     setCheckBattery10(true);
                 } else if (batteryAndMapCar?.battery > 0 && !checkBattery0) {
                     setCheckBattery0(true);
@@ -122,23 +123,30 @@ const App = (props: Props) => {
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
-                {activeTab === 'home' && <HomeScreen isUpdateCarDataProps={isUpdateCarDataProps} setIsUpdateCarDataProps={setIsUpdateCarDataProps} batteryAndMapCarData={batteryAndMapCarData} isLoadingMap={isLoadingMap} />}
+                {activeTab === 'home' && <HomeScreenV2 isUpdateCarDataProps={isUpdateCarDataProps} setIsUpdateCarDataProps={setIsUpdateCarDataProps} batteryAndMapCarData={batteryAndMapCarData} isLoadingMap={isLoadingMap} />}
                 {activeTab === 'recordig' && <RecordingScreen />}
             </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 5 }}>
-                <View style={{ backgroundColor: "#000000", height: 2, width: 160 }} />
-                <View style={{ backgroundColor: "#000000", height: 2, width: 160 }} />
-            </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#FFFFFF', }}>
-                <TouchableOpacity onPress={() => navigateToScreen('home')} >
-                    <CarSvg activeTabButtonText={activeTab === 'home' ? 'active' : 'notActive'} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={isListening ? stopListening : startListening} >
-                    <VoiceSvg activeTabButtonText={isListening} />
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigateToScreen('recordig')} >
-                    <ClockSvg activeTabButtonText={activeTab === 'recordig' ? 'active' : 'notActive'} />
-                </TouchableOpacity>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
+                <View style={{ position: 'absolute', left: 0, right: 0, top: 10, bottom: 0, zIndex: 2 }}>
+                    <View style={{ backgroundColor: "#000000", height: 2, width: 160, position: 'absolute', left: 15 }} />
+                    <View style={{ backgroundColor: "#000000", height: 2, width: 160, position: 'absolute', right: 15 }} />
+                </View>
+                <View style={{ height: 44, width: 44, zIndex: 2 }}>
+                    <TouchableOpacity onPress={() => navigateToScreen('home')} style={{ marginTop: 7 }}>
+                        <CarSvg activeTabButtonText={activeTab === 'home' ? 'active' : 'notActive'} />
+                    </TouchableOpacity>
+                </View>
+                <View style={{ width: 72, height: 72, alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
+                    <TouchableOpacity onPress={isListening ? stopListening : startListening} >
+                        <VoiceSvg activeTabButtonText={isListening} />
+                    </TouchableOpacity>
+                </View>
+                <View style={{ height: 44, width: 44, zIndex: 2 }}>
+                    <TouchableOpacity onPress={() => navigateToScreen('recordig')} style={{ marginTop: 8 }}>
+                        <ClockSvg activeTabButtonText={activeTab === 'recordig' ? 'active' : 'notActive'} />
+                    </TouchableOpacity>
+                </View>
+                <View style={{ position: 'absolute', backgroundColor: '#FFFFFF', top: 11, left: 0, right: 0, bottom: 0 }} />
             </View>
         </View>
     )
