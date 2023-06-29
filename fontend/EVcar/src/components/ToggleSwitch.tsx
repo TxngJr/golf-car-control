@@ -21,19 +21,19 @@ const ToggleSwitch = ({ isEnabled, onToggle, icon }: Props) => {
 
   switch (icon) {
     case 'ArrowUp':
-      renderedIcon = <ArrowUp />;
+      renderedIcon = <ArrowUp isEnabled={isEnabled}/>;
       break;
     case 'ArrowDown':
-      renderedIcon = <ArrowDown />;
+      renderedIcon = <ArrowDown isEnabled={isEnabled}/>;
       break;
     case 'ArrowLeft':
-      renderedIcon = <ArrowLeft />;
+      renderedIcon = <ArrowLeft isEnabled={isEnabled}/>;
       break;
     case 'ArrowRight':
-      renderedIcon = <ArrowRight />;
+      renderedIcon = <ArrowRight isEnabled={isEnabled}/>;
       break;
     case 'PowerSvg':
-      renderedIcon = <PowerSvg />;
+      renderedIcon = <PowerSvg isEnabled={isEnabled}/>;
       break;
     default:
       break;
@@ -41,42 +41,9 @@ const ToggleSwitch = ({ isEnabled, onToggle, icon }: Props) => {
 
   return (
     <TouchableOpacity onPress={toggleSwitch} activeOpacity={0.8} >
-      <View style={[{ 
-        borderColor: '#00000', borderWidth: 4 }, 
-        isEnabled ? { backgroundColor: '#FFFF00' } : { backgroundColor: '#FF2E2E' }, 
-        icon == "ArrowUp" && isEnabled && { backgroundColor: '#C4E4F4' }, 
-        icon == "PowerSvg" ? { borderRadius: 100 } : { borderRadius: 50 },
-        icon == "PowerSvg" && isEnabled && { backgroundColor: '#00D100' },
-        ]}>
         {renderedIcon}
-      </View>
     </TouchableOpacity>
   );
 };
 
 export default ToggleSwitch
-
-const styles = StyleSheet.create({
-  container: {
-    width: 50,
-    height: 31,
-    borderRadius: 15,
-    borderWidth: 2,
-    borderColor: '#ccc',
-    justifyContent: 'center',
-    padding: 2,
-  },
-  containerActive: {
-    backgroundColor: '#00A300',
-  },
-  toggle: {
-    width: 25,
-    height: 25,
-    borderRadius: 13,
-    backgroundColor: '#fff',
-  },
-  toggleActive: {
-    backgroundColor: '#fff',
-    transform: [{ translateX: 18 }],
-  },
-});

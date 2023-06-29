@@ -62,58 +62,40 @@ const HomeScreen = ({ isUpdateCarDataProps, setIsUpdateCarDataProps, batteryAndM
             <View style={{ width: 350, height: 600, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30 }}>
                 <Text style={{ alignSelf: 'center', fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingTop: 20 }}>หน้าควบคุมรถ</Text>
                 <ScrollView>
-                    <View style={{ width: 340, height: 340, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30, marginVertical: 20, justifyContent: 'center', borderWidth: 2, borderColor: '#00000' }}>
-                        <View style={{
-                            position: 'absolute', left: '50%', top: 10,
-                            transform: [
-                                { translateX: -50 },
-                            ],
-                        }}>
+                    <View style={{ width: 340, height: 340, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30, marginVertical: 20, borderWidth: 2, borderColor: '#00000', flex: 1, alignItems: 'center', justifyContent: 'center', }}>
+                        <View style={{ position: 'absolute', top: 5 }}>
                             <ToggleSwitch
                                 isEnabled={carData?.frontLight ? true : false}
                                 onToggle={() => handleStatusClick('frontLight')}
                                 icon='ArrowUp'
                             />
                         </View>
-                        <View style={{
-                            position: 'absolute', left: '50%', bottom: 10,
-                            transform: [
-                                { translateX: -50 },
-                            ],
-                        }}>
+                        <View style={{ position: 'absolute', bottom: 5 }}>
                             <ToggleSwitch
                                 isEnabled={carData?.backLight ? true : false}
                                 onToggle={() => handleStatusClick('backLight')}
                                 icon='ArrowDown'
                             />
                         </View>
-                        <View style={{
-                            position: 'absolute', left: 10, top: '50%',
-                            transform: [
-                                { translateY: -50 }
-                            ],
-                        }}>
+                        <View style={{ position: 'absolute', left: 5 }}>
                             <ToggleSwitch
                                 isEnabled={carData?.leftLight ? true : false}
                                 onToggle={() => handleStatusClick('leftLight')}
                                 icon='ArrowLeft'
                             />
                         </View>
-                        <View style={{
-                            position: 'absolute', right: 10, top: '50%',
-                            transform: [
-                                { translateY: -50 }
-                            ],
-                        }}>
+                        <View style={{ position: 'absolute', right: 5 }}>
                             <ToggleSwitch
                                 isEnabled={carData?.rightLight ? true : false}
                                 onToggle={() => handleStatusClick('rightLight')}
                                 icon='ArrowRight'
                             />
                         </View>
-                        <View style={{
-                            alignSelf: 'center',
-                        }}>
+                        <View style={{ 
+                            position: 'absolute',
+                            top: 108,
+                            left: 108,
+                         }}>
                             <ToggleSwitch
                                 isEnabled={carData?.isStart ? true : false}
                                 onToggle={() => handleStatusClick('isStart')}
