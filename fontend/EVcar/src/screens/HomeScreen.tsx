@@ -11,7 +11,7 @@ import ToggleSwitch from '../components/ToggleSwitch';
 type Props = {
     isUpdateCarDataProps: boolean;
     setIsUpdateCarDataProps: (value: boolean) => void;
-    batteryAndMapCarData: IBatteryAdMapCar| null;
+    batteryAndMapCarData: IBatteryAdMapCar | null;
     isLoadingMap: boolean;
 
 }
@@ -53,54 +53,59 @@ const HomeScreen = ({ isUpdateCarDataProps, setIsUpdateCarDataProps, batteryAndM
             locations={[0.2279, 0.72]}
             style={{ flex: 1 }}
         >
-            <View style={{ paddingLeft: 10, paddingTop: 50 }}>
+            <View style={{ paddingLeft: 10, paddingTop: 10 }}>
                 <Image
                     source={require('./../assets/imgs/logo.png')}
                     style={{ width: 152, height: 101 }}
                 />
             </View>
             <View style={{ width: 350, height: 600, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30 }}>
-                <Text style={{ alignSelf: 'center', fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingTop: 20 }}>หน้าควบคุมรถ</Text>
+                <Text style={{ alignSelf: 'center', fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingTop: 10 }}>หน้าควบคุมรถ</Text>
                 <ScrollView>
-
-                    <View style={{ paddingHorizontal: 60 }}>
-                        <View style={{ flexDirection: "row", justifyContent: 'space-between', marginTop: 30, paddingBottom: 10 }}>
-                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}>ไฟ หน้า</Text>
+                    <View style={{ width: 340, height: 340, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30, marginVertical: 10, borderWidth: 2, borderColor: '#00000', flex: 1, alignItems: 'center', justifyContent: 'center', }}>
+                        <View style={{ position: 'absolute', top: 5 }}>
                             <ToggleSwitch
                                 isEnabled={carData?.frontLight ? true : false}
                                 onToggle={() => handleStatusClick('frontLight')}
+                                icon='ArrowUp'
                             />
                         </View>
-                        <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
-                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}>ไฟ ท้าย</Text>
+                        <View style={{ position: 'absolute', bottom: 5 }}>
                             <ToggleSwitch
                                 isEnabled={carData?.backLight ? true : false}
                                 onToggle={() => handleStatusClick('backLight')}
+                                icon='ArrowDown'
                             />
                         </View>
-                        <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
-                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}>ไฟ ซ้าย</Text>
+                        <View style={{ position: 'absolute', left: 5 }}>
                             <ToggleSwitch
                                 isEnabled={carData?.leftLight ? true : false}
                                 onToggle={() => handleStatusClick('leftLight')}
+                                icon='ArrowLeft'
                             />
                         </View>
-                        <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
-                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}> ไฟ ขวา</Text>
+                        <View style={{ position: 'absolute', right: 5 }}>
                             <ToggleSwitch
                                 isEnabled={carData?.rightLight ? true : false}
                                 onToggle={() => handleStatusClick('rightLight')}
+                                icon='ArrowRight'
                             />
                         </View>
-                        <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
-                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}>สตาร์ทรถ</Text>
+                        <View style={{ 
+                            position: 'absolute',
+                            top: 108,
+                            left: 108,
+                         }}>
                             <ToggleSwitch
                                 isEnabled={carData?.isStart ? true : false}
                                 onToggle={() => handleStatusClick('isStart')}
+                                icon='PowerSvg'
                             />
                         </View>
+                    </View>
+                    <View style={{ paddingHorizontal: 60 }}>
                         <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
-                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000", paddingRight: 90 }}>แบตเตอรี่</Text>
+                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingRight: 90 }}>แบตเตอรี่</Text>
                             {isLoadingMap ? (
                                 <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}>Loading...</Text>
                             ) : (

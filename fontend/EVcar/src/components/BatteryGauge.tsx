@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Svg, { Circle } from 'react-native-svg';
 
@@ -7,22 +7,46 @@ type Props = {
 };
 
 const BatteryGauge = ({ percentage }: Props) => {
-    const gaugeWidth = Math.max(percentage, 1); // Ensure the gauge is at least 1% wide
+
 
     return (
-        <View style={{ width: 100, height: 35,flex:1 }}>
-            <View style={{ width: 100, height: 35, borderColor: '#000000', borderWidth: 2, borderRadius: 30,overflow: 'hidden', }}>
-                <View
-                    style={[{ width: `${gaugeWidth}%`, borderRadius: 15, height: 30, backgroundColor: '#90EE90', },
-                        percentage <= 50 && { backgroundColor: '#FFFF00' },
-                        percentage <= 30 && { backgroundColor: '#FFA500' },
-                        percentage <= 10 && { backgroundColor: '#FF0000' },
-                    ]}>
-                </View>
-                    <Text style={{ fontFamily: 'THSarabunBold', fontSize: 24, color: '#000000', position:'absolute',left:30 }}>{percentage} %</Text>
-            </View>
+        <View style={{ width: 100, height: 35, flex: 1 }}>
+            {
+                percentage > 75 ?
+                    <Image
+                        source={require('./../assets/imgs/batt/4.png')}
+                        style={styles.image}
+                    />
+                    : percentage > 50 ?
+                        <Image
+                            source={require('./../assets/imgs/batt/3.png')}
+                            style={styles.image}
+                        />
+                        : percentage > 25 ?
+                            <Image
+                                source={require('./../assets/imgs/batt/2.png')}
+                                style={styles.image}
+                            />
+                            : percentage > 0 ?
+                                <Image
+                                    source={require('./../assets/imgs/batt/1.png')}
+                                    style={styles.image}
+                                />
+                                :
+                                <Image
+                                    source={require('./../assets/imgs/batt/0.png')}
+                                    style={styles.image}
+                                />
+            }
         </View>
     );
 };
 
 export default BatteryGauge;
+
+const styles = StyleSheet.create({
+    image: {
+        width: 60,
+        height: 30,
+    },
+});

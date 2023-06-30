@@ -10,7 +10,6 @@ import { ICar } from './interfaces/ICar';
 import { getBatteryAndMapCar, putCar } from './apis/api';
 import { IBatteryAdMapCar } from './interfaces/IBatteryAdMapCar';
 import { enableLatestRenderer } from 'react-native-maps';
-import HomeScreenV2 from './screens/HomeScreenV2';
 
 enableLatestRenderer();
 type Props = {}
@@ -123,7 +122,7 @@ const App = (props: Props) => {
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
-                {activeTab === 'home' && <HomeScreenV2 isUpdateCarDataProps={isUpdateCarDataProps} setIsUpdateCarDataProps={setIsUpdateCarDataProps} batteryAndMapCarData={batteryAndMapCarData} isLoadingMap={isLoadingMap} />}
+                {activeTab === 'home' && <HomeScreen isUpdateCarDataProps={isUpdateCarDataProps} setIsUpdateCarDataProps={setIsUpdateCarDataProps} batteryAndMapCarData={batteryAndMapCarData} isLoadingMap={isLoadingMap} />}
                 {activeTab === 'recordig' && <RecordingScreen />}
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
