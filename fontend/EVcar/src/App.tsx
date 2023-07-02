@@ -125,7 +125,7 @@ const App = (props: Props) => {
                 {activeTab === 'home' && <HomeScreen isUpdateCarDataProps={isUpdateCarDataProps} setIsUpdateCarDataProps={setIsUpdateCarDataProps} batteryAndMapCarData={batteryAndMapCarData} isLoadingMap={isLoadingMap} />}
                 {activeTab === 'recordig' && <RecordingScreen />}
             </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center',backgroundColor: '#FFFFFF' }}>
                 <View style={{ position: 'absolute', left: 0, right: 0, top: 10, bottom: 0, zIndex: 2 }}>
                     <View style={{ backgroundColor: "#000000", height: 2, width: 160, position: 'absolute', left: 15 }} />
                     <View style={{ backgroundColor: "#000000", height: 2, width: 160, position: 'absolute', right: 15 }} />
@@ -145,7 +145,6 @@ const App = (props: Props) => {
                         <ClockSvg activeTabButtonText={activeTab === 'recordig' ? 'active' : 'notActive'} />
                     </TouchableOpacity>
                 </View>
-                <View style={{ position: 'absolute', backgroundColor: '#FFFFFF', top: 11, left: 0, right: 0, bottom: 0 }} />
             </View>
         </View>
     )

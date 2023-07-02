@@ -53,13 +53,13 @@ const HomeScreen = ({ isUpdateCarDataProps, setIsUpdateCarDataProps, batteryAndM
             locations={[0.2279, 0.72]}
             style={{ flex: 1 }}
         >
-            <View style={{ paddingLeft: 10, paddingTop: 10 }}>
+            <View style={{ paddingLeft: 10, paddingTop: 5 }}>
                 <Image
                     source={require('./../assets/imgs/logo.png')}
                     style={{ width: 152, height: 101 }}
                 />
             </View>
-            <View style={{ width: 350, height: 600, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30 }}>
+            <View style={{ width: 350, height: 655, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30 }}>
                 <Text style={{ alignSelf: 'center', fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingTop: 10 }}>หน้าควบคุมรถ</Text>
                 <ScrollView>
                     <View style={{ width: 340, height: 340, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30, marginVertical: 10, borderWidth: 2, borderColor: '#00000', flex: 1, alignItems: 'center', justifyContent: 'center', }}>
@@ -103,16 +103,17 @@ const HomeScreen = ({ isUpdateCarDataProps, setIsUpdateCarDataProps, batteryAndM
                             />
                         </View>
                     </View>
-                    <View style={{ paddingHorizontal: 60 }}>
-                        <View style={{ flexDirection: "row", justifyContent: 'space-between', marginVertical: 10 }}>
-                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingRight: 90 }}>แบตเตอรี่</Text>
+                        <View style={{ flexDirection: "row", justifyContent: 'center',alignItems:'center', marginVertical: 5,paddingHorizontal:35 }}>
+                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingRight: 40 }}>แบตเตอรี่</Text>
+                            <View style={{width:88, paddingRight: 15}}>
+                            <Text style={{ fontFamily: "THSarabunBold", fontSize: 36, color: "#000000",textAlign:'right' }}>{batteryAndMapCarData?.battery} %</Text>
+                            </View>
                             {isLoadingMap ? (
                                 <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}>Loading...</Text>
                             ) : (
                                 <BatteryGauge percentage={batteryAndMapCarData?.battery} />
                             )}
                         </View>
-                    </View>
                     {isLoadingMap ? (
                         <Text style={{ fontFamily: "THSarabunBold", fontSize: 24, color: "#000000" }}>Loading...</Text>
                     ) : (

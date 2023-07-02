@@ -28,13 +28,13 @@ const RecordingScreen = (props: Props) => {
       locations={[0.2279, 0.72]}
       style={styles.container}
     >
-      <View style={{ paddingLeft: 10, paddingTop: 50 }}>
+      <View style={{ paddingLeft: 10, paddingTop: 5 }}>
         <Image
           source={require('./../assets/imgs/logo.png')}
           style={styles.image}
         />
       </View>
-      <View style={{ width: 350, height: 600, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30 }}>
+      <View style={{ width: 350, height: 655, backgroundColor: "#FFFFFF", alignSelf: 'center', borderRadius: 30 }}>
         <Text style={{ alignSelf: 'center', fontFamily: "THSarabunBold", fontSize: 36, color: "#000000", paddingTop: 20 }}>ประวัติการใช้งานรถ</Text>
         <ScrollView>
           {data.map((item: IRecord) => (
