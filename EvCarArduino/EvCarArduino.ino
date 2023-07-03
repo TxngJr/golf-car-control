@@ -8,12 +8,14 @@
 #define GPS_RX_PIN 16
 #define GPS_TX_PIN 17
 
-#define FRONT_LIGHT_PIN 4
-#define BACK_LIGHT_PIN 18
-#define IS_START_PIN 19
-#define LEFT_LIGHT_PIN 21
-#define RIGHT_LIGHT_PIN 22
-#define CHECK_BATTERY_PIN 23
+#define FRONT_LIGHT_PIN 2
+#define BACK_LIGHT_PIN 4
+#define IS_START_PIN 5
+#define LEFT_LIGHT_PIN 18
+#define RIGHT_LIGHT_PIN 19
+#define CHECK_BATTERY_PIN 33
+#define BUZZER_PIN 22
+#define INFAR_SENSOR_PIN 13
 
 BatteryCheck battery(CHECK_BATTERY_PIN);
 TinyGPSPlus gps;
@@ -22,40 +24,52 @@ String serverName = "http://swapsjobs.3bbddns.com:36889/car/";
 String tokenId = "648fe088444fd58e8d3cac8b";
 unsigned long previousMillis = 0;
 const int taskDelay = 1000;
-
+int prvLatitude = 1;
+int prvLongitude = 1;
 TaskHandle_t taskHandle = NULL;
 
+void taskCheckSensor(void *pvParameters) {
+  while (1) {
+    if (!digitalRead(INFAR_SENSOR_PIN)) {
+      digitalWrite(BUZZER_PIN, HIGH);
+      vTaskDelay(taskDelay);
+      digitalWrite(BUZZER_PIN, LOW);
+    }
+    vTaskDelay(taskDelay / 2);
+  }
+}
 void taskPutBatteryAndMap(void *pvParameters) {
   while (1) {
     while (Serial1.available() > 0) {
       if (gps.encode(Serial1.read())) {
         if (gps.location.isUpdated()) {
-          const size_t capacity = JSON_OBJECT_SIZE(3);
-          DynamicJsonDocument jsonDoc(capacity);
-          jsonDoc["battery"] = battery.batteryPercent();
-          jsonDoc["latitude"] = gps.location.lat();
-          jsonDoc["longitude"] = gps.location.lng();
-
-          String jsonString;
-          serializeJson(jsonDoc, jsonString);
-
-          HTTPClient http;
-
-          String serverPath = serverName + "updatebatteryandmapcar/" + tokenId;
-          http.begin(serverPath.c_str());
-          http.addHeader("Content-Type", "application/json");
-
-          int httpResponseCode = http.PUT(jsonString);
-
-          if (httpResponseCode == HTTP_CODE_OK) {
-            Serial.println("Data sent successfully");
-          } else {
-            Serial.print("Error occurred while sending data: ");
-          }
-          http.end();
+          prvLatitude = gps.location.lat();
+          prvLongitude = gps.location.lng();
         }
       }
     }
+    const size_t capacity = JSON_OBJECT_SIZE(3);
+    DynamicJsonDocument jsonDoc(capacity);
+    jsonDoc["battery"] = battery.batteryPercent();
+    jsonDoc["latitude"] = prvLatitude;
+    jsonDoc["longitude"] = prvLongitude;
+    String jsonString;
+    serializeJson(jsonDoc, jsonString);
+
+    HTTPClient http;
+
+    String serverPath = serverName + "updatebatteryandmapcar/" + tokenId;
+    http.begin(serverPath.c_str());
+    http.addHeader("Content-Type", "application/json");
+
+    int httpResponseCode = http.PUT(jsonString);
+
+    if (httpResponseCode == HTTP_CODE_OK) {
+      Serial.println("Data sent successfully");
+    } else {
+      Serial.print("Error occurred while sending data: ");
+    }
+    http.end();
     vTaskDelay(taskDelay / 2);
   }
 }
@@ -66,7 +80,8 @@ void setup() {
   WiFi.mode(WIFI_STA);
   WiFiManager wm;
   bool res;
-  res = wm.autoConnect("EvCarConnect", " ");
+  // wm.resetSettings();
+  res = wm.autoConnect("EvCarConnect", "12345678");
   if (!res) {
     Serial.println("Failed to connect");
     ESP.restart();
@@ -78,11 +93,20 @@ void setup() {
   pinMode(LEFT_LIGHT_PIN, OUTPUT);
   pinMode(RIGHT_LIGHT_PIN, OUTPUT);
   pinMode(IS_START_PIN, OUTPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
+  pinMode(INFAR_SENSOR_PIN, INPUT);
 
   xTaskCreate(
     taskPutBatteryAndMap,
     "PutBatteryAndMapTask",
     2000,
+    NULL,
+    1,
+    &taskHandle);
+  xTaskCreate(
+    taskCheckSensor,
+    "taskCheckSensorTask",
+    1000,
     NULL,
     1,
     &taskHandle);
@@ -113,12 +137,11 @@ void loop() {
         bool leftLightStatus = jsonDoc["leftLight"];
         bool rightLightStatus = jsonDoc["rightLight"];
         bool isStartStatus = jsonDoc["isStart"];
-
-        digitalWrite(FRONT_LIGHT_PIN, frontLightStatus ? HIGH : LOW);
-        digitalWrite(BACK_LIGHT_PIN, backLightStatus ? HIGH : LOW);
-        digitalWrite(LEFT_LIGHT_PIN, leftLightStatus ? HIGH : LOW);
-        digitalWrite(RIGHT_LIGHT_PIN, rightLightStatus ? HIGH : LOW);
-        digitalWrite(IS_START_PIN, isStartStatus ? HIGH : LOW);
+        digitalWrite(FRONT_LIGHT_PIN, !frontLightStatus ? HIGH : LOW);
+        digitalWrite(BACK_LIGHT_PIN, !backLightStatus ? HIGH : LOW);
+        digitalWrite(LEFT_LIGHT_PIN, !leftLightStatus ? HIGH : LOW);
+        digitalWrite(RIGHT_LIGHT_PIN, !rightLightStatus ? HIGH : LOW);
+        digitalWrite(IS_START_PIN, !isStartStatus ? HIGH : LOW);
       }
     } else {
       Serial.print("Error occurred: ");
